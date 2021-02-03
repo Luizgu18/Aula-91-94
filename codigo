@@ -1,0 +1,16 @@
+int pino2 = 2; //Cria uma variável para o Pino 2
+bool estado_sensor;  //Cria uma variável para armazenar o estado do sensor
+
+void setup() {
+  pinMode (pino2, INPUT_PULLUP); //Coloca o Pino 2 como Entrada
+  Serial.begin; //Inicia o Monitor Serial
+
+void loop() {
+  estado_sensor = digitalRead(pino2); //Efetua a leitura do Pino 2 e armazena o valor obtido na variável
+
+  if (estado_sensor == 0) {
+    Serial.println("O rack esta fechado");
+  }
+  else {
+    Serial.println("O rack esta aberto");
+  }
